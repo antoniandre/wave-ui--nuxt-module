@@ -1,6 +1,10 @@
-import Vue from 'vue'
-import WaveUI from 'wave-ui/src/wave-ui/index.js'
+import Vue from 'vue';
+<% if (options.useScss) { %>
+import WaveUI from 'wave-ui/src/wave-ui/index.js';
+<% } else { %>
+import WaveUI from 'wave-ui';
+<% } %>
 
-Vue.use(WaveUI)
+Vue.use(WaveUI);
 
-export default new WaveUI(<%= JSON.stringify(options, null, 2) %>)
+export default new WaveUI(<%= JSON.stringify(options.WaveUI, null, 2) %>);

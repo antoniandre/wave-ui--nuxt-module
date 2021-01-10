@@ -13,34 +13,42 @@ export default function WaveUIModule(moduleOptions) {
       ...this.options.WaveUI
     }
 
-    // Import wave-ui SCSS.
-    // this.options.css.push('wave-ui/dist/wave-ui.css')
-    // this.options.css.push(path.resolve(__dirname, '../wave-ui/src/wave-ui/scss/index.scss'))
+    const { useScss } = options
 
-    // Inject global SCSS variables in all the wave-ui components.
-    const { scss } = this.options.build.loaders
-    const scssVarsPath = path.resolve(__dirname, '../../wave-ui/src/wave-ui/scss/_variables.scss')
-    scss.additionalData = [
-      scss.additionalData,
-      `@import '${this.options.WaveUI.scssVariables}';`,
-      `@import '${scssVarsPath}';`
-    ].join('\n')
+    if (useScss) {
+      // Import wave-ui SCSS.
+      // this.options.css.push(path.resolve(__dirname, '../wave-ui/src/wave-ui/scss/index.scss'))
 
-    this.options.build.transpile.push('wave-ui')
+      // Inject global SCSS variables in all the wave-ui components.
+      const { scss } = this.options.build.loaders
+      const scssVarsPath = path.resolve(__dirname, '../../wave-ui/src/wave-ui/scss/_variables.scss')
+      scss.additionalData = [
+        scss.additionalData,
+        `@import '${useScss}';`,
+        `@import '${scssVarsPath}';`
+      ].join('\n')
+
+      // this.options.build.transpile.push('wave-ui')
+
+      // A la carte.
+      // this.nuxt.hook('components:dirs', dirs => {
+      //   dirs.push({
+      //     path: path.resolve(__dirname, '../../wave-ui/src/wave-ui/components'),
+      //     pattern: '**/*.vue',
+      //     transpile: true
+      //   })
+      // })
+    }
+    else this.options.css.push('wave-ui/dist/wave-ui.css')
 
     // Register plugin.
     this.addPlugin({
         src: path.resolve(__dirname, 'templates', 'plugin.ejs'),
         fileName: 'wave-ui.js',
-        options
-    })
-
-    this.nuxt.hook('components:dirs', dirs => {
-      dirs.push({
-        path: path.resolve(__dirname, '../../wave-ui/src/wave-ui/components'),
-        pattern: '**/*.vue',
-        transpile: true
-      })
+        options: {
+          WaveUI: options,
+          useScss
+        },
     })
   })
 }
