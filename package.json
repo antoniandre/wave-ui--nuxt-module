@@ -1,0 +1,29 @@
+{
+  "name": "@wave-ui/nuxt",
+  "version": "1.0.0",
+  "description": "Nuxt.js module for Wave UI.",
+  "author": "Antoni Andre <antoniandre.web@gmail.com>",
+  "main": "index.js",
+  "unpkg": "index.js",
+  "jsdelivr": "index.js",
+  "license": "MIT",
+  "repository": "https://github.com/antoniandre/wave-ui",
+  "keywords": [
+    "wave-ui",
+    "nuxt",
+    "vue",
+    "module"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "@nuxt/components": "^1.2.3"
+  },
+  "peerDependencies": {
+    "node-sass": "*",
+    "pug": "^3.0.0",
+    "pug-plain-loader": "^1.1.0",
+    "sass-loader": "*",
+    "vue": "^2.0.0",
+    "wave-ui": "^1.15.0"
+  }
+}
