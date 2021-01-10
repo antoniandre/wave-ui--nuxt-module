@@ -19,7 +19,7 @@ export default function WaveUIModule(moduleOptions) {
 
     // Inject global SCSS variables in all the wave-ui components.
     const { scss } = this.options.build.loaders
-    const scssVarsPath = path.resolve(__dirname, '../wave-ui/src/wave-ui/scss/_variables.scss')
+    const scssVarsPath = path.resolve(__dirname, '../../wave-ui/src/wave-ui/scss/_variables.scss')
     scss.additionalData = [
       scss.additionalData,
       `@import '${this.options.WaveUI.scssVariables}';`,
