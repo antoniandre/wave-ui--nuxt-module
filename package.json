@@ -1,6 +1,6 @@
 {
   "name": "@wave-ui/nuxt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nuxt.js module for Wave UI.",
   "author": "Antoni Andre <antoniandre.web@gmail.com>",
   "main": "index.js",
