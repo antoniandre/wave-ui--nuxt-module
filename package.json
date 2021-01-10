@@ -7,13 +7,19 @@
   "unpkg": "index.js",
   "jsdelivr": "index.js",
   "license": "MIT",
-  "repository": "https://github.com/antoniandre/wave-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniandre/wave-ui.git"
+  },
   "keywords": [
     "wave-ui",
     "nuxt",
     "vue",
     "module"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {},
   "dependencies": {
     "@nuxt/components": "^1.2.3"
@@ -25,5 +31,10 @@
     "sass-loader": "*",
     "vue": "^2.0.0",
     "wave-ui": "^1.15.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/antoniandre/wave-ui/issues"
+  },
+  "homepage": "https://github.com/antoniandre/wave-ui#readme",
+  "devDependencies": {}
 }
